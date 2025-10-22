@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTL - Đặt Bàn Online</title>
+    <link rel="stylesheet" href="datban.css" />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <h1 class="page-title">Thông Tin Đặt Bàn Online</h1>
+
+        <!-- Order Summary -->
+        <div class="order-summary">
+          <div class="summary-header">
+            <div class="summary-col">STT</div>
+            <div class="summary-col">Món ăn</div>
+            <div class="summary-col">Giá bán</div>
+            <div class="summary-col">Số lượng</div>
+            <div class="summary-col">Thành tiền</div>
+          </div>
+          <div class="summary-body" id="orderItems">
+            <div class="empty-cart">
+              <p>Chưa có món ăn nào được chọn</p>
+            </div>
+          </div>
+          <div class="summary-total">
+            <span>Tổng tiền:</span>
+            <span class="total-amount" id="totalAmount">0.000 VNĐ</span>
+          </div>
+        </div>
+
+        <!-- Booking Form -->
+        <form class="booking-form" id="bookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <select class="form-control" id="salutation" required>
+                <option value="">Chọn Chi Nhánh</option>
+                <option value="chi-nhanh-1">Chi Nhánh 1 - Hà Nội</option>
+                <option value="chi-nhanh-2">Chi Nhánh 2 - HCM</option>
+                <option value="chi-nhanh-3">Chi Nhánh 3 - Đà Nẵng</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="fullName"
+                placeholder="Họ và tên"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Địa chỉ email"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <input
+                type="number"
+                class="form-control"
+                id="guests"
+                placeholder="Số lượng người"
+                min="1"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="tel"
+                class="form-control"
+                id="phone"
+                placeholder="Số điện thoại"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="date"
+                class="form-control"
+                id="bookingDate"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <select class="form-control" id="timeSlot" required>
+                <option value="">Khung giờ</option>
+                <option value="morning">Buổi sáng (9:00 - 11:00)</option>
+                <option value="lunch">Buổi trưa (11:00 - 14:00)</option>
+                <option value="afternoon">Buổi chiều (14:00 - 17:00)</option>
+                <option value="evening">Buổi tối (17:00 - 22:00)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group full-width">
+              <textarea
+                class="form-control"
+                id="specialRequest"
+                rows="4"
+                placeholder="Yêu cầu đặc biệt (nếu có)"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Đặt Bàn</button>
+            <button type="reset" class="btn-reset">Làm mới</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+      <div class="modal-content">
+        <div class="modal-icon">✓</div>
+        <h2>Đặt Bàn Thành Công!</h2>
+        <p>
+          Cảm ơn bạn đã đặt bàn tại BTL Restaurant. Chúng tôi sẽ liên hệ với bạn
+          sớm nhất.
+        </p>
+        <button class="btn-close" onclick="closeModal()">Đóng</button>
+      </div>
+    </div>
+
+    <script src="datban.js"></script>
+  </body>
+</html>
